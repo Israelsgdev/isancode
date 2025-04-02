@@ -199,7 +199,10 @@ ul {
 /* Hero Section */
 .hero {
     padding: 180px 0 100px;
-    background: linear-gradient(rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.9)), url('../img/hero-bg.jpg') no-repeat center center/cover;
+    /* background-image: url(/img/fundocurto.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; */
+     background: linear-gradient(rgba(27, 70, 95, 0.9), rgba(21, 25, 32, 0.9)), url('../img/fundocurto.jpg') no-repeat center center/cover; 
     color: white;
     text-align: center;
 }
@@ -207,6 +210,7 @@ ul {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    
 }
 
 .hero-title {
@@ -441,11 +445,7 @@ ul {
     background-color: white;
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
-}
+
 
 .contact-info {
     background-color: var(--light);
