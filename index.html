@@ -4,42 +4,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IsanCode - Desenvolvimento de Sites Profissionais</title>
-    <meta name="description" content="Desenvolvimento de sites modernos, e-commerce e soluções digitais personalizadas">
+    <title>IsanCode - Desenvolvimento Web & Soluções em Python</title>
+    <meta name="description" content="Desenvolvimento de sites, aplicações Python e soluções digitais personalizadas">
     <!-- Favicon -->
     <link rel="icon" href="assets/icons/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <!-- CSS -->
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- CSS Customizado -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600;700&display=swap"
         rel="stylesheet">
+    <style>
+        /* Animações customizadas */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        /* Botões Bootstrap customizados */
+        .btn-isancode {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-isancode:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+        
+        .btn-isancode-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-isancode-outline:hover {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15);
+        }
+        
+        /* Tech Stack Styling */
+        .tech-item {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 5px;
+            display: inline-block;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+            border-color: var(--primary);
+        }
+        
+        /* Portfolio Filter */
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--light-gray);
+            color: var(--gray);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0 5px 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .portfolio-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        /* Especializações */
+        .spec-item {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .spec-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .spec-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Header/Navbar -->
     <header class="header">
         <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <img src="img/logo.png" class="img-fluid rounded-top logo-header" alt="" />
-
+            <nav class="navbar navbar-expand-lg">
+                <a href="index.html" class="navbar-brand logo">
+                    <img src="img/logo.png" class="logo-header" alt="IsanCode Logo" />
                 </a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#technologies">Tecnologias</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-isancode ms-lg-3 mt-2 mt-lg-0" href="#contact">Contato</a></li>
+                    </ul>
                 </div>
-                <ul class="nav-list">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#contact" class="btn-nav">Contato</a></li>
-                </ul>
             </nav>
         </div>
     </header>
@@ -48,12 +183,11 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Soluções Digitais que <span>Impulsionam seu Negócio</span></h1>
-                <p class="hero-subtitle">Desenvolvimento de sites profissionais, e-commerce e sistemas web sob medida
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">Fale Conosco</a>
-                    <a href="#portfolio" class="btn-secondary">Ver Portfólio</a>
+                <h1 class="hero-title animate__animated animate__fadeInDown" data-aos="fade-down" data-aos-delay="200">Soluções Digitais que <span class="text-primary">Impulsionam seu Negócio</span></h1>
+                <p class="hero-subtitle animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-delay="400">Desenvolvimento web, aplicações Python e sistemas personalizados para sua empresa</p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#contact" class="btn btn-isancode me-3 mb-3">Fale Conosco</a>
+                    <a href="#portfolio" class="btn btn-isancode-outline mb-3">Ver Projetos</a>
                 </div>
             </div>
         </div>
@@ -62,16 +196,16 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Nossos <span>Serviços</span></h2>
-                <p class="section-subtitle">Soluções completas para sua presença digital</p>
+                <p class="section-subtitle">Soluções completas de desenvolvimento para suas necessidades digitais</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card hover-lift" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">
                         <i class="bi bi-code-slash"></i>
                     </div>
-                    <h3>Websites Institucionais</h3>
+                    <h3>Desenvolvimento Web</h3>
                     <p>Sites modernos, responsivos e otimizados para conversão com design exclusivo para sua marca.</p>
                     <ul class="service-features">
                         <li><i class="bi bi-check-circle"></i> Design Responsivo</li>
@@ -80,7 +214,20 @@
                     </ul>
                 </div>
 
-                <div class="service-card highlight">
+                <div class="service-card highlight hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="bi bi-filetype-py"></i>
+                    </div>
+                    <h3>Desenvolvimento Python</h3>
+                    <p>Aplicações web, automação, análise de dados e scripts personalizados com Python.</p>
+                    <ul class="service-features">
+                        <li><i class="bi bi-check-circle"></i> Django & Flask</li>
+                        <li><i class="bi bi-check-circle"></i> Automação de Processos</li>
+                        <li><i class="bi bi-check-circle"></i> Análise de Dados</li>
+                    </ul>
+                </div>
+
+                <div class="service-card hover-lift" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon">
                         <i class="bi bi-cart"></i>
                     </div>
@@ -93,7 +240,20 @@
                     </ul>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="bi bi-gear"></i>
+                    </div>
+                    <h3>Automação & Scripts</h3>
+                    <p>Criação de scripts Python para automatizar tarefas repetitivas e otimizar processos.</p>
+                    <ul class="service-features">
+                        <li><i class="bi bi-check-circle"></i> Web Scraping</li>
+                        <li><i class="bi bi-check-circle"></i> Automação de Tarefas</li>
+                        <li><i class="bi bi-check-circle"></i> Integração de APIs</li>
+                    </ul>
+                </div>
+
+                <div class="service-card hover-lift" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon">
                         <i class="bi bi-search"></i>
                     </div>
@@ -105,6 +265,77 @@
                         <li><i class="bi bi-check-circle"></i> Relatórios Mensais</li>
                     </ul>
                 </div>
+
+                <div class="service-card hover-lift" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <h3>Aplicativos Web</h3>
+                    <p>Desenvolvimento de aplicações web progressivas (PWA) com funcionalidades avançadas.</p>
+                    <ul class="service-features">
+                        <li><i class="bi bi-check-circle"></i> Interface Moderna</li>
+                        <li><i class="bi bi-check-circle"></i> Banco de Dados</li>
+                        <li><i class="bi bi-check-circle"></i> Funcionalidade Offline</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="technologies py-5">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Tecnologias <span>que Utilizamos</span></h2>
+                <p class="section-subtitle">Ferramentas modernas para desenvolvimento de alta qualidade</p>
+            </div>
+            <div class="tech-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="tech-category mb-5">
+                    <h3 class="mb-4"><i class="bi bi-filetype-py me-2"></i> Python & Frameworks</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">Django</span>
+                        <span class="tech-item">Flask</span>
+                        <span class="tech-item">FastAPI</span>
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">NumPy</span>
+                        <span class="tech-item">Selenium</span>
+                        <span class="tech-item">BeautifulSoup</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category mb-5">
+                    <h3 class="mb-4"><i class="bi bi-globe me-2"></i> Frontend & Web</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">HTML5</span>
+                        <span class="tech-item">CSS3</span>
+                        <span class="tech-item">JavaScript</span>
+                        <span class="tech-item">React</span>
+                        <span class="tech-item">Bootstrap</span>
+                        <span class="tech-item">jQuery</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category mb-5">
+                    <h3 class="mb-4"><i class="bi bi-database me-2"></i> Banco de Dados</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">MySQL</span>
+                        <span class="tech-item">SQLite</span>
+                        <span class="tech-item">MongoDB</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category mb-5">
+                    <h3 class="mb-4"><i class="bi bi-tools me-2"></i> Ferramentas</h3>
+                    <div class="tech-stack">
+                        <span class="tech-item">Git</span>
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">AWS</span>
+                        <span class="tech-item">Linux</span>
+                        <span class="tech-item">VSCode</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -112,38 +343,82 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Nosso <span>Portfólio</span></h2>
-                <p class="section-subtitle">Alguns dos projetos recentes que desenvolvemos</p>
+                <p class="section-subtitle">Projetos de desenvolvimento web e Python que já realizamos</p>
             </div>
+            
+            <div class="portfolio-filter text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Websites</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+            </div>
+            
             <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="img/loja-moda.jpg" alt="Projeto 1">
-                    <div class="portfolio-overlay">
-                        <h3>Loja de Moda</h3>
-                        <p>E-commerce completo para marca de roupas</p>
-                        <a href="#" class="btn-portfolio">Ver Detalhes</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="img/corporativo.jpg" alt="Projeto 2">
+                <div class="portfolio-item fade-in-up" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/corporativo.jpg" alt="Site Corporativo">
                     <div class="portfolio-overlay">
                         <h3>Site Corporativo</h3>
                         <p>Website institucional para empresa de tecnologia</p>
-                        <a href="#" class="btn-portfolio">Ver Detalhes</a>
+                        <span class="portfolio-tag">HTML/CSS/JS</span>
+                        <a href="#" class="btn btn-isancode btn-sm mt-2">Ver Detalhes</a>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="img/noticias.jpg" alt="Projeto 3">
+                
+                <div class="portfolio-item fade-in-up" data-category="python" data-aos="fade-up" data-aos-delay="300">
+                    <img src="img/automacao.jpg" alt="Automação Python">
+                    <div class="portfolio-overlay">
+                        <h3>Sistema de Automação</h3>
+                        <p>Sistema Python para automação de relatórios</p>
+                        <span class="portfolio-tag">Python/Pandas</span>
+                        <a href="#" class="btn btn-isancode btn-sm mt-2">Ver Detalhes</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="ecommerce" data-aos="fade-up" data-aos-delay="400">
+                    <img src="img/loja-moda.jpg" alt="E-commerce Moda">
+                    <div class="portfolio-overlay">
+                        <h3>Loja de Moda Online</h3>
+                        <p>E-commerce completo para marca de roupas</p>
+                        <span class="portfolio-tag">WordPress/WooCommerce</span>
+                        <a href="#" class="btn btn-isancode btn-sm mt-2">Ver Detalhes</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="python" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/web-app.jpg" alt="Aplicação Web Python">
+                    <div class="portfolio-overlay">
+                        <h3>Aplicação Web Django</h3>
+                        <p>Plataforma de gestão com Django e PostgreSQL</p>
+                        <span class="portfolio-tag">Django/PostgreSQL</span>
+                        <a href="#" class="btn btn-isancode btn-sm mt-2">Ver Detalhes</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                    <img src="img/noticias.jpg" alt="Portal de Notícias">
                     <div class="portfolio-overlay">
                         <h3>Portal de Notícias</h3>
                         <p>Plataforma de conteúdo com sistema de assinaturas</p>
-                        <a href="#" class="btn-portfolio">Ver Detalhes</a>
+                        <span class="portfolio-tag">PHP/MySQL</span>
+                        <a href="#" class="btn btn-isancode btn-sm mt-2">Ver Detalhes</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in-up" data-category="python" data-aos="fade-up" data-aos-delay="400">
+                    <img src="img/analise-dados.jpg" alt="Análise de Dados">
+                    <div class="portfolio-overlay">
+                        <h3>Ferramenta de Análise</h3>
+                        <p>Dashboard Python para análise de dados empresariais</p>
+                        <span class="portfolio-tag">Python/Plotly</span>
+                        <a href="#" class="btn btn-isancode btn-sm mt-2">Ver Detalhes</a>
                     </div>
                 </div>
             </div>
-            <div class="portfolio-cta">
-                <a href="#contact" class="btn-primary">Quero um Site Como Esses</a>
+            
+            <div class="portfolio-cta text-center mt-5" data-aos="fade-up" data-aos-delay="300">
+                <a href="#contact" class="btn btn-isancode btn-lg">Quero um Projeto Personalizado</a>
             </div>
         </div>
     </section>
@@ -152,29 +427,39 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-content">
-                    <h2 class="section-title">Sobre a <span>IsanCode</span></h2>
-                    <p>A IsanCode é uma agência especializada em desenvolvimento web criada por Israel Santana, com mais
-                        de 5 anos de experiência no mercado digital.</p>
-                    <p>Nossa missão é entregar soluções web de alta qualidade que realmente gerem resultados para nossos
-                        clientes, combinando design atraente com tecnologia de ponta.</p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <span>Desenvolvimento Sob Medida</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <span>Suporte Contínuo</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <span>Resultados Comprovados</span>
+                <div class="about-content" data-aos="fade-right">
+                    <h2 class="section-title mb-4">Sobre a <span>IsanCode</span></h2>
+                    <p class="mb-4">A IsanCode é uma agência especializada em desenvolvimento web e soluções Python, criada por Israel Santana, com mais de 5 anos de experiência no mercado digital.</p>
+                    <p class="mb-5">Nossa missão é entregar soluções tecnológicas de alta qualidade que realmente gerem resultados para nossos clientes, combinando design atraente com programação eficiente.</p>
+                    
+                    <div class="specializations">
+                        <h3 class="mb-4">Especializações:</h3>
+                        <div class="specialization-grid">
+                            <div class="spec-item hover-lift" data-aos="zoom-in" data-aos-delay="200">
+                                <i class="bi bi-laptop"></i>
+                                <h4>Desenvolvimento Web</h4>
+                                <p>Sites responsivos e aplicações web modernas</p>
+                            </div>
+                            <div class="spec-item hover-lift" data-aos="zoom-in" data-aos-delay="300">
+                                <i class="bi bi-filetype-py"></i>
+                                <h4>Soluções Python</h4>
+                                <p>Automação, análise de dados e aplicações Django</p>
+                            </div>
+                            <div class="spec-item hover-lift" data-aos="zoom-in" data-aos-delay="400">
+                                <i class="bi bi-cart"></i>
+                                <h4>E-commerce</h4>
+                                <p>Lojas virtuais completas e otimizadas</p>
+                            </div>
+                            <div class="spec-item hover-lift" data-aos="zoom-in" data-aos-delay="500">
+                                <i class="bi bi-robot"></i>
+                                <h4>Automação</h4>
+                                <p>Scripts Python para otimizar processos</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="img/empresa.png" alt="Sobre a IsanCode">
+                <div class="about-image" data-aos="fade-left" data-aos-delay="300">
+                    <img src="img/empresa.png" alt="Sobre a IsanCode" class="img-fluid rounded shadow">
                 </div>
             </div>
         </div>
@@ -183,66 +468,91 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Fale <span>Conosco</span></h2>
-                <p class="section-subtitle">Pronto para levar seu negócio para o próximo nível?</p>
+                <p class="section-subtitle">Pronto para desenvolver sua solução digital?</p>
             </div>
+            
             <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="bi bi-envelope"></i>
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+                    <h3 class="mb-4">Entre em Contato</h3>
+                    <p class="mb-4">Tem um projeto em mente? Vamos conversar sobre como podemos ajudar!</p>
+                    
+                    <div class="info-item mb-4">
+                        <i class="bi bi-envelope fs-4 text-primary"></i>
                         <div>
                             <h4>Email</h4>
-                            <a href="mailto:israel_kle@hotmail.com">
-                                <p>israel_kle@hotmail.com</p>
+                            <a href="mailto:israel_kle@hotmail.com" class="text-decoration-none">
+                                <p class="mb-0">israel_kle@hotmail.com</p>
                             </a>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="bi bi-whatsapp"></i>
+                    
+                    <div class="info-item mb-4">
+                        <i class="bi bi-whatsapp fs-4 text-primary"></i>
                         <div>
                             <h4>Whatsapp</h4>
-                            <a href="https://wa.me/+5577981549456">
-                                <p>+55 (77) 98154-9456</p>
+                            <a href="https://wa.me/+5577981549456" class="text-decoration-none">
+                                <p class="mb-0">+55 (77) 98154-9456</p>
                             </a>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="bi bi-linkedin"></i>
+                    
+                    <div class="info-item mb-4">
+                        <i class="bi bi-linkedin fs-4 text-primary"></i>
                         <div>
                             <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/israel-sang/">
-                                <p>linkedin.com/in/israel-sang</p>
+                            <a href="https://www.linkedin.com/in/israel-sang/" class="text-decoration-none">
+                                <p class="mb-0">linkedin.com/in/israel-sang</p>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item mb-4">
+                        <i class="bi bi-github fs-4 text-primary"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/seu-usuario" class="text-decoration-none">
+                                <p class="mb-0">github.com/seu-usuario</p>
                             </a>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="contact-form">
+                
+                <div class="contact-form" data-aos="fade-left" data-aos-delay="400">
+                    <h3 class="mb-4">Solicite um Orçamento</h3>
                     <form id="form-contato">
-                        <div class="form-group">
-                            <input type="text" id="nome" placeholder="Seu Nome" required>
+                        <div class="mb-3">
+                            <input type="text" id="nome" class="form-control" placeholder="Seu Nome" required>
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Seu Email" required>
+                        
+                        <div class="mb-3">
+                            <input type="email" id="email" class="form-control" placeholder="Seu Email" required>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" id="telefone" placeholder="Seu Telefone">
+                        
+                        <div class="mb-3">
+                            <input type="tel" id="telefone" class="form-control" placeholder="Seu Telefone/WhatsApp">
                         </div>
-                        <div class="form-group">
-                            <select id="servico" required>
-                                <option value="" disabled selected>Selecione um serviço</option>
+                        
+                        <div class="mb-3">
+                            <select id="servico" class="form-select" required>
+                                <option value="" disabled selected>Tipo de Projeto</option>
                                 <option value="website">Website Institucional</option>
+                                <option value="python">Aplicação Python</option>
                                 <option value="ecommerce">Loja Virtual (E-commerce)</option>
+                                <option value="automacao">Automação com Python</option>
                                 <option value="seo">Otimização SEO</option>
                                 <option value="outro">Outro</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <textarea id="mensagem" rows="5" placeholder="Conte-nos sobre seu projeto" required></textarea>
+                        
+                        <div class="mb-4">
+                            <textarea id="mensagem" class="form-control" rows="5" placeholder="Descreva seu projeto ou necessidade" required></textarea>
                         </div>
-                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                        
+                        <button type="submit" class="btn btn-isancode w-100">Enviar Solicitação</button>
                     </form>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
@@ -251,49 +561,116 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-about">
-                    <a href="index.html" class="logo">
-                        <img src="img/logo.png" class="img-fluid rounded-top logo-header" alt="" />
-    
+                <div class="footer-about" data-aos="fade-up">
+                    <a href="index.html" class="logo mb-3 d-inline-block">
+                        <img src="img/logo.png" class="logo-header" alt="IsanCode Logo" />
                     </a>
-                    <p>Desenvolvimento de sites profissionais e soluções digitais personalizadas para seu negócio.</p>
+                    <p class="mb-4">Desenvolvimento web, soluções Python e automação para impulsionar seu negócio digital.</p>
                     <div class="social-links">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/israel-sang/" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/seu-usuario" class="social-link"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Links Rápidos</h4>
+                
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="mb-4">Navegação</h4>
                     <ul>
                         <li><a href="#home">Início</a></li>
                         <li><a href="#services">Serviços</a></li>
+                        <li><a href="#technologies">Tecnologias</a></li>
                         <li><a href="#portfolio">Portfólio</a></li>
                         <li><a href="#about">Sobre</a></li>
                         <li><a href="#contact">Contato</a></li>
                     </ul>
                 </div>
-                <div class="footer-services">
-                    <h4>Nossos Serviços</h4>
+                
+                <div class="footer-services" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="mb-4">Serviços</h4>
                     <ul>
-                        <li><a href="#">Websites Institucionais</a></li>
+                        <li><a href="#">Desenvolvimento Web</a></li>
+                        <li><a href="#">Soluções Python</a></li>
                         <li><a href="#">E-commerce</a></li>
-                        <li><a href="#">Otimização SEO</a></li>
-                        <li><a href="#">Manutenção</a></li>
+                        <li><a href="#">Automação</a></li>
+                        <li><a href="#">SEO & Performance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="mb-4">Contato</h4>
+                    <ul>
+                        <li><i class="bi bi-envelope me-2"></i> israel_kle@hotmail.com</li>
+                        <li><i class="bi bi-whatsapp me-2"></i> (77) 98154-9456</li>
+                        <li><i class="bi bi-geo-alt me-2"></i> Brasil</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <a href="index.html" class="logo">
-                    <img src="img/logo.png" class="img-fluid rounded-top logo-header" alt="" />
-                </a>
+            
+            <div class="footer-bottom text-center py-4" data-aos="fade-up">
+                <p class="mb-0">&copy; <span id="year"></span> IsanCode - Desenvolvimento Web & Python. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <!-- Bootstrap Bundle com Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Script Customizado -->
     <script src="js/script.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Script para filtro do portfólio
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remover active de todos os botões
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Adicionar active ao botão clicado
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.classList.add('visible');
+                            }, 100);
+                        } else {
+                            item.classList.remove('visible');
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Mostrar todos os itens inicialmente
+            portfolioItems.forEach(item => {
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, 500);
+            });
+            
+            // Atualizar ano no footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 
 </html>
